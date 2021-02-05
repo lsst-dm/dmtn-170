@@ -60,6 +60,7 @@ These requests allow users to create a database, create a table, start a super-t
 Suitable ports have been opened between the Rubin Batch Systems and the Qserv cluster to allow these HTTP requests.
 
 
+\label{sec:loading}
 \section{Data loading}
 There are two ways to load data.
 Previously, the binary tool \texttt{qserv-replica-file-ingest} available via the docker container was used. Due to the need of docker, it cannot be run on Developer Cluster. Therefore, we did this step on Qserv machines on either masters or workers.
@@ -68,15 +69,10 @@ Recently, a new feature has been added (\jira{DM-27091}) for the workers to inge
 No data movement of the chunk files is involved as the chunk files are stored on the GPFS shared filesystem mounted on both the Rubin Batch Systems and the Qserv cluster.
 
 \section{Examples}
-Multiple sets of the object tables from the HSC-RC2 reprocessing have been ingested into Qserv. As of this writing, the following databases are availalbe in the "small" Qserv instance at NCSA.
-\begin{enumerate}
-\item hsc\_rc2\_w\_2020\_30\_04
-\item hsc\_rc2\_w\_2020\_38\_04
-\item hsc\_rc2\_w\_2020\_42\_05
-\end{enumerate}
+Table \ref{tab:examples} lists the HSC and DC2 databases availalbe in the "small" Qserv instance at NCSA as of this writing.
+New object tables from the HSC-RC2 reprocessing continue to be ingested into Qserv.
+Some of these databases were ingested before the new data loading feature was implemented and the data loading was done on the Qserv cluster (see Sect \ref{sec:loading}, hence the job counts differ for the same HSC-RC2 dataset.
+\texttt{w\_2020\_42} was the first HSC-RC2 dataset with data loading directly from the Developer Cluster.
+Some, but not all, of these databases are made queryable via TAP on Rubin Science Platform hosted at NCSA.
 
-The HSC-PDR2 reprocessed object tables have also been reloaded into the "small" Qserv instance available via Rubin Science Platform hosted at NCSA.
-\begin{enumerate}
-\item hsc\_pdr2\_2020\_08\_01 for the DEEP data
-\item hsc\_pdr2\_2020\_09\_00 for the WIDE data
-\end{enumerate}
+\input{examples}
