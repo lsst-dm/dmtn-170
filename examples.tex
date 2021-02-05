@@ -1,0 +1,32 @@
+\begin{table}
+\tiny
+\centering
+\begin{tabular} {|r|r|r|r|r|r|r|r|}
+\hline
+{Database Name}&{Dataset}&{Row Count}&{Input Size}&{Tract Count}&{Job Count}&{Wall time}&{Cumulative time}
+\\ \hline
+{hsc\_pdr2\_2020\_08\_01} & HSC-PDR2 DEEP & 32193313  & 45G & 39  & 198 & $\sim$32m & $\sim$5h39m \\
+{hsc\_pdr2\_2020\_09\_00} & HSC-PDR2 WIDE & 570287192 & 659G & 663 & 3318 & 6h27m & 5d9h \\
+
+{hsc\_rc2\_w\_2020\_30\_04} & HSC-RC2 & 5520644 & 8G & 3 & 18 & 26m & 1h1m  \\
+{hsc\_rc2\_w\_2020\_38\_04} & HSC-RC2 & 5528373 & 8G & 3 & 18 & 25m & 1h3m \\
+{hsc\_rc2\_w\_2020\_42\_05} & HSC-RC2 & 5516628 & 8G & 3 & 21 & 29m & 1h13m \\
+
+{hsc\_rc2\_v21\_0\_0\_rc1\_04 } & HSC-RC2 & 5525413 & 8G & 3 & 21 & 29m & 1h13m \\
+{hsc\_rc2\_w\_2021\_02\_00} & HSC-RC2 & 5516315 & 8G & 3 & 21 & 27m & 1h9m \\
+
+{dc2\_object\_run22i\_dr6\_wfd\_v1\_08} & DC2 DR6 WFD & 147088445 & 118G & 166 & 999 & 47m & 11h23m \\
+\hline
+\end{tabular}
+\caption{
+An overview of current databases available in the "small" Qserv instance at NCSA.
+These databases contain Object tables.
+The job count, wall time, and cumulative job wall time of the ingest workflow for each batabase are also shown.
+The workflow job counts do not include additional data transfer or management jobs added by the workflow manager Pegasus.
+The timing information is provided by Pegasus.
+The $\sim$ symbol indicates missing timing data; estimates are given based on the same loading in the "large" Qserv instance.
+The input size is the sum of all input parquet files.
+One DC2 database is included for comparison.
+}
+\label{tab:examples}
+\end{table}
